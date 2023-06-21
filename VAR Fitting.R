@@ -18,7 +18,8 @@
 dynr.var = function(data = NULL, nv = NULL, ID = NULL, 
                     time = NULL, dir = NULL, p.val = 0.05,
                     ini.mu = NULL, ini.cov = NULL,
-                    beta = NULL, loadings = NULL){
+                    beta = NULL, loadings = NULL,
+                    use.mi = FALSE, aux = NULL){
   # User Argument Handling
     if(is.null(ID)){
       message('We are assuming you are only fitting to N = 1 subject. If this is a mistake FIX IT.')
@@ -95,19 +96,27 @@ dynr.var = function(data = NULL, nv = NULL, ID = NULL,
       model$ub[1:nv^2] = 1.00
       model$lb[1:nv^2] = -1.00
     # Cooking the dynr model
-    results <- dynr.cook(model)
-    # Saving the results
-    obj = summary(results)
+    if(use.mi == TRUE){
+      results <- dynr.mi(model, which.aux = aux, 
+                        which.lag = paste0('X', 1:nv), lag = 1,
+                        which.lead = NULL, lead = 0,
+                        m = 5, iter = 10, 
+                        imp.obs=FALSE, imp.exo=TRUE,
+                        diag = TRUE, Rhat=1.1,
+                        conf.level = 0.95,
+                        verbose = FALSE, seed=1472)
+      obj = result$estimation.result
+    }else{results <- dynr.cook(model); obj = summary(results)$Coefficients}
     # Significance Testing of Transition Matrix Coefficients
-      effects = matrix(obj$Coefficients[1:nv^2,1], nv, nv, byrow = FALSE)
-      sigs = matrix(as.numeric(obj$Coefficients[1:nv^2,6]<p.val), nv, nv)
+      effects = matrix(obj[1:nv^2,1], nv, nv, byrow = FALSE)
+      sigs = matrix(as.numeric(obj[1:nv^2,6]<p.val), nv, nv)
       OG.betas = effects * sigs
     # Significance Testing of Residual Covariance Matrix
       sig.cov = matrix(NA, nv, nv)
-      sig.cov[lower.tri(sig.cov,diag=TRUE)] = as.numeric(obj$Coefficients[(nv^2+1):nrow(obj$Coefficients),6] < p.val)
+      sig.cov[lower.tri(sig.cov,diag=TRUE)] = as.numeric(obj[(nv^2+1):nrow(obj),6] < p.val)
       sig.cov[upper.tri(sig.cov)] = t(sig.cov)[upper.tri(sig.cov)]
       res.cov = matrix(NA, nv, nv)
-      res.cov[lower.tri(res.cov,diag=TRUE)]=obj$Coefficients[(nv^2+1):nrow(obj$Coefficients),1]
+      res.cov[lower.tri(res.cov,diag=TRUE)]=obj[(nv^2+1):nrow(obj),1]
       res.cov[upper.tri(res.cov)] = t(res.cov)[upper.tri(res.cov)]
       OG.cov = sig.cov*res.cov
       PDC = matrix(NA, nv, nv)
