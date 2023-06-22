@@ -23,7 +23,12 @@ apt_install \
 # radian
 apt_install   \
   python3-pip
-sudo pip3 install -U radian
+
+pip3 install -U radian
+
+# qgraph
+apt_install   \
+  libglpk-dev
 
 # To add additional R packages,
 # for example, to install tidyverse and dplyr, do the following:

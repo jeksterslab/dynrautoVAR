@@ -1,0 +1,8 @@
+# R Environment Variables
+.Renviron
+
+# R profile
+.Rprofile
+
+# RStudio files
+.Rproj.user/
