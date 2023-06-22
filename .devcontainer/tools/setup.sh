@@ -37,3 +37,9 @@ install2.r --error --skipinstalled -n -1 \
   httpgd         \
   styler         \
   lintr
+
+# repo dependencies
+install2.r --error --skipinstalled -n -1 \
+  qgraph \
+  igraph \
+  fclust

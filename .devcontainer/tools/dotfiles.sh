@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 # dotfiles
 git clone https://github.com/jeksterslab/dotfiles.git
 cd dotfiles
