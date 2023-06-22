@@ -21,8 +21,9 @@ apt_install \
   vim
 
 # radian
-apt_install python3-pip
-pip3 install -U radian
+apt_install   \
+  python3-pip
+sudo pip3 install -U radian
 
 # To add additional R packages,
 # for example, to install tidyverse and dplyr, do the following:
@@ -30,7 +31,9 @@ install2.r --error --skipinstalled -n -1 \
   tidyverse \
   dplyr
 
-# vscode dependencies
+# vscode project dependencies
 install2.r --error --skipinstalled -n -1 \
   languageserver \
-  httpgd
+  httpgd         \
+  styler         \
+  lintr
