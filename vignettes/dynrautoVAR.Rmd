@@ -1,0 +1,33 @@
+---
+title: "dynrautoVAR: Automated VAR(1) in dynr"
+author: "Jonathan Park"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dynrautoVAR: Automated VAR(1) in dynr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/jeksterslab/dynrautoVAR/workflows/R-CMD-check/badge.svg)](https://github.com/jeksterslab/dynrautoVAR/actions)
+[![test-coverage](https://github.com/jeksterslab/dynrautoVAR/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/jeksterslab/dynrautoVAR/actions/workflows/test-coverage.yaml)
+<!-- badges: end -->
+
+## Description
+
+Automatically fit VAR(1) models based on input data in `dynr`.
+
+## More Information
+
+See
+[GitHub Pages](https://jeksterslab.github.io/dynrautoVAR)
+for package documentation.

@@ -21,30 +21,12 @@ apt_install \
   vim
 
 # radian
-apt_install   \
-  python3-pip
-
+apt_install python3-pip
 pip3 install -U radian
 
-# qgraph
-apt_install   \
-  libglpk-dev
-
 # To add additional R packages,
-# for example, to install tidyverse and dplyr, do the following:
+# for example, to install tidyverse and dplyr
+# do the following:
 install2.r --error --skipinstalled -n -1 \
   tidyverse \
   dplyr
-
-# vscode project dependencies
-install2.r --error --skipinstalled -n -1 \
-  languageserver \
-  httpgd         \
-  styler         \
-  lintr
-
-# repo dependencies
-install2.r --error --skipinstalled -n -1 \
-  qgraph \
-  igraph \
-  fclust

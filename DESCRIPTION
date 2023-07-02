@@ -1,0 +1,26 @@
+Package: dynrautoVAR
+Title: Automated VAR(1) in dynr
+Version: 0.9.1
+Authors@R: 
+    person(given = "Jonathan",
+           family = "Park",
+           role = c("aut", "cre", "cph"),
+           email = "JPark@psu.edu")
+Description: Automatically fit VAR(1) models based on input data in 'dynr'.
+URL: https://github.com/jeksterslab/dynrautoVAR, https://jeksterslab.github.io/dynrautoVAR/
+BugReports: https://github.com/jeksterslab/dynrautoVAR/issues
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+VignetteBuilder: knitr
+Depends:
+    R (>= 3.0.0)
+Imports:
+    dynr
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat,
+    rprojroot
+RoxygenNote: 7.2.3
