@@ -2,6 +2,7 @@
 #'
 #' The function takes in a `data.frame`, fits individual models for each subject indicated by the ID variable
 #' and stores the fitted models as a list.
+#' Note that if `ini.*` arguments are not provided, initial values are set to null matrices or null vectors.
 #'
 #' @return Returns a list of fitted VAR(1) models for each subject.
 #'
@@ -12,6 +13,7 @@
 #' 1. I change the argument `ID` to `id` to match [dynr::dynr.data()].
 #' 1. I changed the argument `p.val` to `alpha`.
 #' 1. I removed the default `NULL` value on arguments that require explicit values (`dataframe`, `nv`, and `time`).
+#' 1. I made all initial condition arguments begin with `ini.`.
 #' 1. I set a default value for the argument `dir` to remove it from the argument handling section.
 #' 1. I cleaned up the argument handling section.
 #' 1. I changed `result$estimation.result` to `results$estimation.result`.
@@ -27,8 +29,8 @@
 #' @param alpha significance level for testing of transition matrix coefficients.
 #' @param ini.mu a vector of the starting or fixed values of the initial state vector.
 #' @param ini.cov a positive definite matrix of the starting or fixed values of the initial error covariance structure.
-#' @param beta the matrix of starting/fixed values for the transition matrix in the specified linear dynamic model.
-#' @param loadings matrix of starting or fixed values for factor loadings.
+#' @param ini.beta the matrix of starting/fixed values for the transition matrix in the specified linear dynamic model.
+#' @param ini.loadings matrix of starting or fixed values for factor loadings.
 #' @param use.mi if `use.mi = TRUE`, use [dynr::dynr.mi()] to address missing data in covariates.
 #' @param aux names of the auxiliary variables used in the imputation model
 #'   if `use.mi = TRUE`.
@@ -42,8 +44,8 @@ dynr.var <- function(dataframe,
                      alpha = 0.05,
                      ini.mu = NULL,
                      ini.cov = NULL,
-                     beta = NULL,
-                     loadings = NULL,
+                     ini.beta = NULL,
+                     ini.loadings = NULL,
                      use.mi = FALSE,
                      aux = NULL) {
   # User Argument Handling
@@ -59,16 +61,16 @@ dynr.var <- function(dataframe,
   if (is.null(ini.cov)) {
     ini.cov <- diag(1, nv)
   }
-  if (is.null(beta)) {
-    beta <- diag(0.00, nv)
+  if (is.null(ini.beta)) {
+    ini.beta <- diag(0.00, nv)
   }
-  if (is.null(loadings)) {
-    loadings <- diag(1, nv)
+  if (is.null(ini.loadings)) {
+    ini.loadings <- diag(1, nv)
   }
 
   # Preparing Measurement
   meas <- prep.measurement(
-    values.load = loadings,
+    values.load = ini.loadings,
     params.load = matrix(rep("fixed", (nv^2)), ncol = nv), # Flag for customization
     state.names = paste0("X", 1:nv),
     obs.names = paste0("X", 1:nv)
@@ -76,7 +78,7 @@ dynr.var <- function(dataframe,
   # Matrix Dynamics
   # By using 'letters' we are limited to 26 variables
   dynm <- prep.matrixDynamics(
-    values.dyn = beta,
+    values.dyn = ini.beta,
     params.dyn = matrix(levels(interaction(letters[1:nv], 1:nv, sep = "_")),
       nv, nv,
       byrow = TRUE

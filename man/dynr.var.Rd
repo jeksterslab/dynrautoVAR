@@ -13,8 +13,8 @@ dynr.var(
   alpha = 0.05,
   ini.mu = NULL,
   ini.cov = NULL,
-  beta = NULL,
-  loadings = NULL,
+  ini.beta = NULL,
+  ini.loadings = NULL,
   use.mi = FALSE,
   aux = NULL
 )
@@ -36,9 +36,9 @@ dynr.var(
 
 \item{ini.cov}{a positive definite matrix of the starting or fixed values of the initial error covariance structure.}
 
-\item{beta}{the matrix of starting/fixed values for the transition matrix in the specified linear dynamic model.}
+\item{ini.beta}{the matrix of starting/fixed values for the transition matrix in the specified linear dynamic model.}
 
-\item{loadings}{matrix of starting or fixed values for factor loadings.}
+\item{ini.loadings}{matrix of starting or fixed values for factor loadings.}
 
 \item{use.mi}{if \code{use.mi = TRUE}, use \code{\link[dynr:dynr.mi]{dynr::dynr.mi()}} to address missing data in covariates.}
 
@@ -51,6 +51,7 @@ Returns a list of fitted VAR(1) models for each subject.
 \description{
 The function takes in a \code{data.frame}, fits individual models for each subject indicated by the ID variable
 and stores the fitted models as a list.
+Note that if \verb{ini.*} arguments are not provided, initial values are set to null matrices or null vectors.
 }
 \details{
 I encapsulated \code{dynrautoVAR} into a temporary package so I can render the documentation and do some tests.
@@ -61,6 +62,7 @@ I made the following changes to the code.
 \item I change the argument \code{ID} to \code{id} to match \code{\link[dynr:dynr.data]{dynr::dynr.data()}}.
 \item I changed the argument \code{p.val} to \code{alpha}.
 \item I removed the default \code{NULL} value on arguments that require explicit values (\code{dataframe}, \code{nv}, and \code{time}).
+\item I made all initial condition arguments begin with \code{ini.}.
 \item I set a default value for the argument \code{dir} to remove it from the argument handling section.
 \item I cleaned up the argument handling section.
 \item I changed \code{result$estimation.result} to \code{results$estimation.result}.
