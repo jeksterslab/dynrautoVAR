@@ -1,5 +1,10 @@
 #' Automatically Fit VAR(1) Models Based on Input Data
 #'
+#' The function takes in a `data.frame`, fits individual models for each subject indicated by the ID variable
+#' and stores the fitted models as a list.
+#'
+#' @return Returns a list of fitted VAR(1) models for each subject.
+#'
 #' @details I encapsulated `dynrautoVAR` into a temporary package so I can render the documentation and do some tests.
 #'
 #' I made the following changes to the code.

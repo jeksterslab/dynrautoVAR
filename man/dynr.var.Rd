@@ -45,8 +45,12 @@ dynr.var(
 \item{aux}{names of the auxiliary variables used in the imputation model
 if \code{use.mi = TRUE}.}
 }
+\value{
+Returns a list of fitted VAR(1) models for each subject.
+}
 \description{
-Automatically Fit VAR(1) Models Based on Input Data
+The function takes in a \code{data.frame}, fits individual models for each subject indicated by the ID variable
+and stores the fitted models as a list.
 }
 \details{
 I encapsulated \code{dynrautoVAR} into a temporary package so I can render the documentation and do some tests.
