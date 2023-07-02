@@ -1,0 +1,31 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.5.0
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "dynrautoVAR" in publications use:'
+type: software
+license: GPL-3.0-only
+title: 'dynrautoVAR: Automated VAR(1) in dynr'
+version: 0.9.1
+abstract: Automatically fit VAR(1) models based on input data in 'dynr'.
+authors:
+- family-names: Park
+  given-names: Jonathan
+  email: JPark@psu.edu
+preferred-citation:
+  type: manual
+  title: 'dynrautoVAR: Automated VAR(1) in dynr'
+  authors:
+  - family-names: Park
+    given-names: Jonathan
+    email: JPark@psu.edu
+  year: '2023'
+  notes: R package version 0.9.1
+repository-code: https://github.com/jeksterslab/dynrautoVAR
+url: https://jeksterslab.github.io/dynrautoVAR/
+contact:
+- family-names: Park
+  given-names: Jonathan
+  email: JPark@psu.edu
