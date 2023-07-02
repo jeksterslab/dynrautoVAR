@@ -1,0 +1,64 @@
+---
+title: "Demo"
+author: "Jonathan Park"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+dir <- root$find_file(
+  ".data-raw"
+)
+dir.create(
+  dir,
+  showWarnings = FALSE
+)
+output <- file.path(
+  dir,
+  "dynr.var.Rds"
+)
+if (!file.exists(output)) {
+  library(dynr)
+  library(dynrautoVAR)
+  data("demo.dat", package = "dynrautoVAR")
+  output <- dynr.var(
+    dataframe = demo.dat,
+    nv = 5,
+    time = "time",
+    id = "id"
+  )
+  saveRDS(output, file = output)
+}
+output <- readRDS(output)
+```
+
+```{r}
+#| eval = FALSE
+library(dynr)
+library(dynrautoVAR)
+data("demo.dat", package = "dynrautoVAR")
+output <- dynr.var(
+  dataframe = demo.dat,
+  nv = 5,
+  time = "time",
+  id = "id"
+)
+```
+
+```{r}
+str(output)
+```
