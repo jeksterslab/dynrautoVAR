@@ -2,7 +2,7 @@
 #'
 #' @author Jonathan Park
 #'
-#' This function takes a list of outputs from [dynr.cook()] or output from [dynr.var()] and
+#' This function takes a list of outputs from [dynr::dynr.cook()] or output from [dynr.var()] and
 #' performs a subgrouping analysis. The output is a list of clusters.
 #'
 #' @details I encapsulated `dynrautoVAR` into a temporary package so I can render the documentation and do some tests.
@@ -15,9 +15,9 @@
 #' 1. I changed the argument `params` to `params.cook` and `var.opt`` to `params.var`.
 #' 1. I used [styler::style_pkg()] to style the code for added readability.
 #'
-#' @param input list of [dynr.cook()] objects or output from [dynr.var()].
+#' @param input list of [dynr::dynr.cook()] objects or output from [dynr.var()].
 #' @param alpha significance level for testing of transition matrix coefficients.
-#' @param params.cook parameters for clustering for [dynr.cook()] input.
+#' @param params.cook parameters for clustering for [dynr::dynr.cook()] input.
 #' @param params.var parameters for clustering for [dynr.var()] input.
 #' @param method Subgrouping method.
 #' @param k number of clusters.

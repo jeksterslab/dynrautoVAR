@@ -15,11 +15,11 @@ dynr.sub(
 )
 }
 \arguments{
-\item{input}{list of \code{\link[=dynr.cook]{dynr.cook()}} objects or output from \code{\link[=dynr.var]{dynr.var()}}.}
+\item{input}{list of \code{\link[dynr:dynr.cook]{dynr::dynr.cook()}} objects or output from \code{\link[=dynr.var]{dynr.var()}}.}
 
 \item{alpha}{significance level for testing of transition matrix coefficients.}
 
-\item{params.cook}{parameters for clustering for \code{\link[=dynr.cook]{dynr.cook()}} input.}
+\item{params.cook}{parameters for clustering for \code{\link[dynr:dynr.cook]{dynr::dynr.cook()}} input.}
 
 \item{params.var}{parameters for clustering for \code{\link[=dynr.var]{dynr.var()}} input.}
 
@@ -48,6 +48,6 @@ I made the following changes to the code.
 \author{
 Jonathan Park
 
-This function takes a list of outputs from \code{\link[=dynr.cook]{dynr.cook()}} or output from \code{\link[=dynr.var]{dynr.var()}} and
+This function takes a list of outputs from \code{\link[dynr:dynr.cook]{dynr::dynr.cook()}} or output from \code{\link[=dynr.var]{dynr.var()}} and
 performs a subgrouping analysis. The output is a list of clusters.
 }
