@@ -1,6 +1,8 @@
 #' Automatically Fit VAR(1) Models Based on Input Data
 #'
-#' The function takes in a `data.frame`, fits individual models for each subject indicated by the ID variable
+#' @author Jonathan Park
+#'
+#' This function takes in a `data.frame`, fits individual models for each subject indicated by the ID variable
 #' and stores the fitted models as a list.
 #' Note that if `ini.*` arguments are not provided, initial values are set to null matrices or null vectors.
 #'
@@ -17,6 +19,7 @@
 #' 1. I set a default value for the argument `dir` to remove it from the argument handling section.
 #' 1. I cleaned up the argument handling section.
 #' 1. I changed `result$estimation.result` to `results$estimation.result`.
+#' 1. I gave the output a class of `dynrVar` for subsequent use of the output.
 #' 1. I used [styler::style_pkg()] to style the code for added readability.
 #'
 #' Note that I mainly based the way I documented the arguments from functions in the `dynr` package used within this function. If you are amenable to the way I documented this function, I will proceed to documenting the rest.
@@ -172,5 +175,9 @@ dynr.var <- function(dataframe,
       Res = results
     )
   }
+  class(individualMods) <- c(
+    "dynrVar",
+    class(individualMods)
+  )
   return(individualMods)
 }

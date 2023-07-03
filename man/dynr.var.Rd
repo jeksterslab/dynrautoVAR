@@ -49,9 +49,7 @@ if \code{use.mi = TRUE}.}
 Returns a list of fitted VAR(1) models for each subject.
 }
 \description{
-The function takes in a \code{data.frame}, fits individual models for each subject indicated by the ID variable
-and stores the fitted models as a list.
-Note that if \verb{ini.*} arguments are not provided, initial values are set to null matrices or null vectors.
+Automatically Fit VAR(1) Models Based on Input Data
 }
 \details{
 I encapsulated \code{dynrautoVAR} into a temporary package so I can render the documentation and do some tests.
@@ -66,8 +64,16 @@ I made the following changes to the code.
 \item I set a default value for the argument \code{dir} to remove it from the argument handling section.
 \item I cleaned up the argument handling section.
 \item I changed \code{result$estimation.result} to \code{results$estimation.result}.
+\item I gave the output a class of \code{dynrVar} for subsequent use of the output.
 \item I used \code{\link[styler:style_pkg]{styler::style_pkg()}} to style the code for added readability.
 }
 
 Note that I mainly based the way I documented the arguments from functions in the \code{dynr} package used within this function. If you are amenable to the way I documented this function, I will proceed to documenting the rest.
+}
+\author{
+Jonathan Park
+
+This function takes in a \code{data.frame}, fits individual models for each subject indicated by the ID variable
+and stores the fitted models as a list.
+Note that if \verb{ini.*} arguments are not provided, initial values are set to null matrices or null vectors.
 }

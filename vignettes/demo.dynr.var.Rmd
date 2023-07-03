@@ -1,9 +1,9 @@
 ---
-title: "Demo"
+title: "Demo dynr.var()"
 author: "Jonathan Park"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Demo}
+  %\VignetteIndexEntry{Demo dynr.var()}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

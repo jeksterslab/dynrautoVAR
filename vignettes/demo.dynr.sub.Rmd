@@ -1,0 +1,63 @@
+---
+title: "Demo dynr.sub()"
+author: "Jonathan Park"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo dynr.sub()}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+## Output of dynr.var()
+
+### Clustering using WalkTrap (Hard Clustering) using info from PCC and PDC Matrices
+
+```{r}
+library(dynr)
+library(dynrautoVAR)
+data("demo.dynr.var", package = "dynrautoVAR")
+dynr.sub(
+  input = demo.dynr.var,
+  method = "hard",
+  params.var = "Both"
+)
+```
+
+### Clustering using Fuzzy k-means (Fuzzy Clustering) using info from PCC and PDC Matrices
+
+```{r}
+dynr.sub(
+  input = demo.dynr.var,
+  method = "fuzz",
+  params.var = "Both",
+  k = 2,
+  m = 2
+)
+```
+
+## List of dynr.cook() outputs
+
+```{r}
+res.list <- list()
+for (i in seq_len(length(demo.dynr.var))) {
+  res.list[[i]] <- demo.dynr.var[[i]]$Res
+}
+```
+
+```{r}
+dynr.sub(
+  input = res.list,
+  params.cook = c("a_5", "c_4", "d_5", "e_4"),
+  method = "fuzz",
+  k = 2
+)
+```
