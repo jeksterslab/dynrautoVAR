@@ -7,8 +7,8 @@
 dynr.var(
   dataframe,
   nv,
-  time,
   id = NULL,
+  time,
   dir = getwd(),
   alpha = 0.05,
   ini.mu = NULL,
@@ -20,13 +20,13 @@ dynr.var(
 )
 }
 \arguments{
-\item{dataframe}{a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. If the data are fit to a continuous-time model, the TIME variables can contain subject-specific increasing sequences of irregularly spaced real numbers. Missing values in the observed variables shoud be indicated by NA.}
+\item{dataframe}{a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. Missing values in the observed variables shoud be indicated by NA.}
 
 \item{nv}{number of variables.}
 
-\item{time}{a character string of the name of the TIME variable in the data.}
-
 \item{id}{a character string of the name of the ID variable in the data.}
+
+\item{time}{a character string of the name of the TIME variable in the data.}
 
 \item{dir}{path for output files.}
 
@@ -56,8 +56,8 @@ I encapsulated \code{dynrautoVAR} into a temporary package so I can render the d
 
 I made the following changes to the code.
 \enumerate{
-\item I change the argument \code{data} to \code{dataframe} to match \code{\link[dynr:dynr.data]{dynr::dynr.data()}}.
-\item I change the argument \code{ID} to \code{id} to match \code{\link[dynr:dynr.data]{dynr::dynr.data()}}.
+\item I changed the argument \code{data} to \code{dataframe} to match \code{\link[dynr:dynr.data]{dynr::dynr.data()}}.
+\item I changed the argument \code{ID} to \code{id} to match \code{\link[dynr:dynr.data]{dynr::dynr.data()}}.
 \item I changed the argument \code{p.val} to \code{alpha}.
 \item I removed the default \code{NULL} value on arguments that require explicit values (\code{dataframe}, \code{nv}, and \code{time}).
 \item I made all initial condition arguments begin with \code{ini.}.

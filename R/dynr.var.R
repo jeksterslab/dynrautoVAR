@@ -11,8 +11,8 @@
 #' @details I encapsulated `dynrautoVAR` into a temporary package so I can render the documentation and do some tests.
 #'
 #' I made the following changes to the code.
-#' 1. I change the argument `data` to `dataframe` to match [dynr::dynr.data()].
-#' 1. I change the argument `ID` to `id` to match [dynr::dynr.data()].
+#' 1. I changed the argument `data` to `dataframe` to match [dynr::dynr.data()].
+#' 1. I changed the argument `ID` to `id` to match [dynr::dynr.data()].
 #' 1. I changed the argument `p.val` to `alpha`.
 #' 1. I removed the default `NULL` value on arguments that require explicit values (`dataframe`, `nv`, and `time`).
 #' 1. I made all initial condition arguments begin with `ini.`.
@@ -24,7 +24,7 @@
 #'
 #' Note that I mainly based the way I documented the arguments from functions in the `dynr` package used within this function. If you are amenable to the way I documented this function, I will proceed to documenting the rest.
 #'
-#' @param dataframe a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. If the data are fit to a continuous-time model, the TIME variables can contain subject-specific increasing sequences of irregularly spaced real numbers. Missing values in the observed variables shoud be indicated by NA.
+#' @param dataframe a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. Missing values in the observed variables shoud be indicated by NA.
 #' @param nv number of variables.
 #' @param time a character string of the name of the TIME variable in the data.
 #' @param id a character string of the name of the ID variable in the data.
@@ -41,8 +41,8 @@
 #' @export
 dynr.var <- function(dataframe,
                      nv,
-                     time,
                      id = NULL,
+                     time,
                      dir = getwd(),
                      alpha = 0.05,
                      ini.mu = NULL,

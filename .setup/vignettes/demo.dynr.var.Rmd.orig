@@ -31,8 +31,9 @@ if (!file.exists(fn)) {
   output <- dynr.var(
     dataframe = demo.dat,
     nv = 5,
-    time = "time",
-    id = "id"
+    id = "id",
+    time = "time"
+
   )
   saveRDS(output, file = fn)
 }
@@ -47,8 +48,8 @@ data("demo.dat", package = "dynrautoVAR")
 output <- dynr.var(
   dataframe = demo.dat,
   nv = 5,
-  time = "time",
-  id = "id"
+  id = "id",
+  time = "time"
 )
 ```
 
