@@ -4,7 +4,10 @@
     <loc>https://github.com/jeksterslab/dynrautoVAR/404.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/dynrautoVAR/articles/demo.html</loc>
+    <loc>https://github.com/jeksterslab/dynrautoVAR/articles/demo.dynr.sub.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/dynrautoVAR/articles/demo.dynr.var.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/dynrautoVAR/articles/dynrautoVAR.html</loc>
@@ -26,6 +29,12 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/dynrautoVAR/reference/demo.dat.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/dynrautoVAR/reference/demo.dynr.var.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/dynrautoVAR/reference/dynr.sub.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/dynrautoVAR/reference/dynr.var.html</loc>
