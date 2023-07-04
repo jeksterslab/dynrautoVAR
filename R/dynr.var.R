@@ -24,6 +24,8 @@
 #'
 #' Note that I mainly based the way I documented the arguments from functions in the `dynr` package used within this function. If you are amenable to the way I documented this function, I will proceed to documenting the rest.
 #'
+#' @references Add references to [dynr.var()] here.
+#'
 #' @param dataframe a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. Missing values in the observed variables shoud be indicated by NA.
 #' @param nv number of variables.
 #' @param time a character string of the name of the TIME variable in the data.

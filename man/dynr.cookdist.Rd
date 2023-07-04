@@ -20,6 +20,9 @@ dynr.cookdist(dataframe, id, time, ini.beta, dir = getwd())
 \description{
 Cook's Distance in Dynr
 }
+\references{
+Add references to the Cook's distance applied to dynr here.
+}
 \author{
 Jonathan Park
 

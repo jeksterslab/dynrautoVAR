@@ -3,9 +3,9 @@
 \docType{data}
 \name{demo.dynr.var}
 \alias{demo.dynr.var}
-\title{Demo Output of dynr.var()}
+\title{Demo Output of dynr.var() using demo.dat}
 \format{
-A list of length ten. Each element of the list has the followin elemens
+A list of length ten. Each element of the list has the following elements
 \describe{
 \item{Betas}{Maybe we can put a description here.}
 \item{ResidCov}{Maybe we can put a description here.}
@@ -18,6 +18,6 @@ A list of length ten. Each element of the list has the followin elemens
 demo.dynr.var
 }
 \description{
-Demo Output of dynr.var()
+Demo Output of dynr.var() using demo.dat
 }
 \keyword{data}

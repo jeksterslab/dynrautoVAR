@@ -45,6 +45,9 @@ I made the following changes to the code.
 \item I used \code{\link[styler:style_pkg]{styler::style_pkg()}} to style the code for added readability.
 }
 }
+\references{
+Add references to the subgrouping algorithms here.
+}
 \author{
 Jonathan Park
 

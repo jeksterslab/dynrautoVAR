@@ -15,6 +15,8 @@
 #' 1. I changed the argument `params` to `params.cook` and `var.opt`` to `params.var`.
 #' 1. I used [styler::style_pkg()] to style the code for added readability.
 #'
+#' @references Add references to the subgrouping algorithms here.
+#'
 #' @param input list of [dynr::dynr.cook()] objects or output from [dynr.var()].
 #' @param alpha significance level for testing of transition matrix coefficients.
 #' @param params.cook parameters for clustering for [dynr::dynr.cook()] input.

@@ -70,6 +70,9 @@ I made the following changes to the code.
 
 Note that I mainly based the way I documented the arguments from functions in the \code{dynr} package used within this function. If you are amenable to the way I documented this function, I will proceed to documenting the rest.
 }
+\references{
+Add references to \code{\link[=dynr.var]{dynr.var()}} here.
+}
 \author{
 Jonathan Park
 

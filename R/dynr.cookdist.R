@@ -12,6 +12,8 @@
 #' 1. I set a default value for the argument `dir`.
 #' 1. I used [styler::style_pkg()] to style the code for added readability.
 #'
+#' @references Add references to the Cook's distance applied to dynr here.
+#'
 #' @param dataframe a data frame object of data that contain a column of subject ID numbers (i.e., an ID variable), a column indicating subject-specific measurement occasions (i.e., a TIME variable), at least one column of observed values, and any number of covariates. The TIME variable should contain subject-specific sequences of (subsets of) consecutively equally spaced numbers (e.g, 1, 2, 3, ...). That is, the program assumes that the input data.frame is equally spaced with potential missingness. If the measurement occasions for a subject are a subset of an arithmetic sequence but are not consecutive, NAs will be inserted automatically to create an equally spaced data set before estimation. Missing values in the observed variables shoud be indicated by NA.
 #' @param time a character string of the name of the TIME variable in the data.
 #' @param id a character string of the name of the ID variable in the data.

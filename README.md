@@ -1,7 +1,7 @@
 dynrautoVAR
 ================
 Jonathan Park
-2023-07-03
+2023-07-04
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
