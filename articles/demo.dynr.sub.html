@@ -100,14 +100,15 @@ Park</h4>
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: ggplot2</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/dynrautoVAR">dynrautoVAR</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Loading required package: ggplot2</span></span></code></pre>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/dynrautoVAR">dynrautoVAR</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo.dynr.var"</span>, package <span class="op">=</span> <span class="st">"dynrautoVAR"</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="plotting-output-of-2-subjects-from-each-subgroup">Plotting Output of 2 subjects from each subgroup<a class="anchor" aria-label="anchor" href="#plotting-output-of-2-subjects-from-each-subgroup"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">pyj</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span> <span class="co"># 3 and 4 are Subgroup 1; 5 and 6 are Subgroup 2</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span></span>
@@ -120,68 +121,68 @@ Park</h4>
 <span>      ltyDirected <span class="op">=</span> <span class="fl">2</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="co">#&gt; From     To  Weight</span></span>
-<span><span class="co">#&gt; 1     ---     4   -0.57 </span></span>
-<span><span class="co">#&gt; 1     ---     5   0.58 </span></span>
-<span><span class="co">#&gt; 4     ---     5   0.33 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     1   0.48 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     1   0.35 </span></span>
-<span><span class="co">#&gt; 2     --&gt;     2   0.55 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     2   -0.18 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     3   0.58 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     4   0.53 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     5   -0.26 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     5   0.49</span></span>
-<span><span class="co">#&gt; From     To  Weight</span></span>
-<span><span class="co">#&gt; 1     ---     4   -0.38 </span></span>
-<span><span class="co">#&gt; 1     ---     5   0.45 </span></span>
-<span><span class="co">#&gt; 4     ---     5   0.17 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     1   0.5 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     1   0.37 </span></span>
-<span><span class="co">#&gt; 2     --&gt;     2   0.59 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     2   -0.2 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     3   0.57 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     4   0.53 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     5   -0.09 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     5   -0.18 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     5   0.51</span></span>
-<span><span class="co">#&gt; From     To  Weight</span></span>
-<span><span class="co">#&gt; 2     ---     3   0.5 </span></span>
-<span><span class="co">#&gt; 2     ---     4   -0.18 </span></span>
-<span><span class="co">#&gt; 3     ---     4   0.37 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     1   0.58 </span></span>
-<span><span class="co">#&gt; 2     --&gt;     2   0.55 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     2   -0.21 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     3   0.14 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     3   0.52 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     3   0.33 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     4   -0.1 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     4   0.54 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     4   -0.45 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     5   -0.07 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     5   0.53</span></span></code></pre></div>
-<p><img src="reference/figures/vignettes-unnamed-chunk-3-1.png" width="700"></p>
-<pre><code><span><span class="co">#&gt; From     To  Weight</span></span>
-<span><span class="co">#&gt; 1     ---     2   -0.03 </span></span>
-<span><span class="co">#&gt; 1     ---     3   0.05 </span></span>
-<span><span class="co">#&gt; 2     ---     3   0.52 </span></span>
-<span><span class="co">#&gt; 1     ---     4   -0.11 </span></span>
-<span><span class="co">#&gt; 2     ---     4   -0.25 </span></span>
-<span><span class="co">#&gt; 3     ---     4   0.47 </span></span>
-<span><span class="co">#&gt; 1     ---     5   0 </span></span>
-<span><span class="co">#&gt; 2     ---     5   0.17 </span></span>
-<span><span class="co">#&gt; 3     ---     5   -0.09 </span></span>
-<span><span class="co">#&gt; 4     ---     5   0.04 </span></span>
-<span><span class="co">#&gt; 1     --&gt;     1   0.57 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     1   0.15 </span></span>
-<span><span class="co">#&gt; 2     --&gt;     2   0.51 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     2   -0.23 </span></span>
-<span><span class="co">#&gt; 3     --&gt;     3   0.48 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     3   0.38 </span></span>
-<span><span class="co">#&gt; 4     --&gt;     4   0.5 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     4   -0.4 </span></span>
-<span><span class="co">#&gt; 5     --&gt;     5   0.56</span></span></code></pre>
+<span><span class="op">}</span></span></code></pre></div>
+<pre><code><span><span class="co">## From     To  Weight</span></span>
+<span><span class="co">## 1     ---     4   -0.57 </span></span>
+<span><span class="co">## 1     ---     5   0.58 </span></span>
+<span><span class="co">## 4     ---     5   0.33 </span></span>
+<span><span class="co">## 1     --&gt;     1   0.48 </span></span>
+<span><span class="co">## 5     --&gt;     1   0.35 </span></span>
+<span><span class="co">## 2     --&gt;     2   0.55 </span></span>
+<span><span class="co">## 5     --&gt;     2   -0.18 </span></span>
+<span><span class="co">## 3     --&gt;     3   0.58 </span></span>
+<span><span class="co">## 4     --&gt;     4   0.53 </span></span>
+<span><span class="co">## 4     --&gt;     5   -0.26 </span></span>
+<span><span class="co">## 5     --&gt;     5   0.49</span></span></code></pre>
+<pre><code><span><span class="co">## From     To  Weight</span></span>
+<span><span class="co">## 1     ---     4   -0.38 </span></span>
+<span><span class="co">## 1     ---     5   0.45 </span></span>
+<span><span class="co">## 4     ---     5   0.17 </span></span>
+<span><span class="co">## 1     --&gt;     1   0.5 </span></span>
+<span><span class="co">## 5     --&gt;     1   0.37 </span></span>
+<span><span class="co">## 2     --&gt;     2   0.59 </span></span>
+<span><span class="co">## 5     --&gt;     2   -0.2 </span></span>
+<span><span class="co">## 3     --&gt;     3   0.57 </span></span>
+<span><span class="co">## 4     --&gt;     4   0.53 </span></span>
+<span><span class="co">## 1     --&gt;     5   -0.09 </span></span>
+<span><span class="co">## 4     --&gt;     5   -0.18 </span></span>
+<span><span class="co">## 5     --&gt;     5   0.51</span></span></code></pre>
+<pre><code><span><span class="co">## From     To  Weight</span></span>
+<span><span class="co">## 2     ---     3   0.5 </span></span>
+<span><span class="co">## 2     ---     4   -0.18 </span></span>
+<span><span class="co">## 3     ---     4   0.37 </span></span>
+<span><span class="co">## 1     --&gt;     1   0.58 </span></span>
+<span><span class="co">## 2     --&gt;     2   0.55 </span></span>
+<span><span class="co">## 5     --&gt;     2   -0.21 </span></span>
+<span><span class="co">## 1     --&gt;     3   0.14 </span></span>
+<span><span class="co">## 3     --&gt;     3   0.52 </span></span>
+<span><span class="co">## 4     --&gt;     3   0.33 </span></span>
+<span><span class="co">## 3     --&gt;     4   -0.1 </span></span>
+<span><span class="co">## 4     --&gt;     4   0.54 </span></span>
+<span><span class="co">## 5     --&gt;     4   -0.45 </span></span>
+<span><span class="co">## 3     --&gt;     5   -0.07 </span></span>
+<span><span class="co">## 5     --&gt;     5   0.53</span></span></code></pre>
+<p><img src="demo.dynr.sub_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<pre><code><span><span class="co">## From     To  Weight</span></span>
+<span><span class="co">## 1     ---     2   -0.03 </span></span>
+<span><span class="co">## 1     ---     3   0.05 </span></span>
+<span><span class="co">## 2     ---     3   0.52 </span></span>
+<span><span class="co">## 1     ---     4   -0.11 </span></span>
+<span><span class="co">## 2     ---     4   -0.25 </span></span>
+<span><span class="co">## 3     ---     4   0.47 </span></span>
+<span><span class="co">## 1     ---     5   0 </span></span>
+<span><span class="co">## 2     ---     5   0.17 </span></span>
+<span><span class="co">## 3     ---     5   -0.09 </span></span>
+<span><span class="co">## 4     ---     5   0.04 </span></span>
+<span><span class="co">## 1     --&gt;     1   0.57 </span></span>
+<span><span class="co">## 3     --&gt;     1   0.15 </span></span>
+<span><span class="co">## 2     --&gt;     2   0.51 </span></span>
+<span><span class="co">## 5     --&gt;     2   -0.23 </span></span>
+<span><span class="co">## 3     --&gt;     3   0.48 </span></span>
+<span><span class="co">## 4     --&gt;     3   0.38 </span></span>
+<span><span class="co">## 4     --&gt;     4   0.5 </span></span>
+<span><span class="co">## 5     --&gt;     4   -0.4 </span></span>
+<span><span class="co">## 5     --&gt;     5   0.56</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="output-of-dynr-var">Output of dynr.var()<a class="anchor" aria-label="anchor" href="#output-of-dynr-var"></a>
@@ -190,7 +191,7 @@ Park</h4>
 <h3 id="clustering-using-walktrap-hard-clustering-using-info-from-pcc-and-pdc-matrices">Clustering using WalkTrap (Hard Clustering) using info from PCC and
 PDC Matrices<a class="anchor" aria-label="anchor" href="#clustering-using-walktrap-hard-clustering-using-info-from-pcc-and-pdc-matrices"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/dynrautoVAR">dynrautoVAR</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"demo.dynr.var"</span>, package <span class="op">=</span> <span class="st">"dynrautoVAR"</span><span class="op">)</span></span>
@@ -198,121 +199,121 @@ PDC Matrices<a class="anchor" aria-label="anchor" href="#clustering-using-walktr
 <span>  input <span class="op">=</span> <span class="va">demo.dynr.var</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"hard"</span>,</span>
 <span>  params.var <span class="op">=</span> <span class="st">"Both"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; IGRAPH clustering walktrap, groups: 2, mod: 0.058</span></span>
-<span><span class="co">#&gt; + groups:</span></span>
-<span><span class="co">#&gt;   $`1`</span></span>
-<span><span class="co">#&gt;   [1]  1  2  3  4  6  9 10</span></span>
-<span><span class="co">#&gt;   </span></span>
-<span><span class="co">#&gt;   $`2`</span></span>
-<span><span class="co">#&gt;   [1] 5 7 8</span></span>
-<span><span class="co">#&gt; </span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## IGRAPH clustering walktrap, groups: 2, mod: 0.058</span></span>
+<span><span class="co">## + groups:</span></span>
+<span><span class="co">##   $`1`</span></span>
+<span><span class="co">##   [1]  1  2  3  4  6  9 10</span></span>
+<span><span class="co">##   </span></span>
+<span><span class="co">##   $`2`</span></span>
+<span><span class="co">##   [1] 5 7 8</span></span>
+<span><span class="co">## </span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="clustering-using-fuzzy-k-means-fuzzy-clustering-using-info-from-pcc-and-pdc-matrices">Clustering using Fuzzy k-means (Fuzzy Clustering) using info from
 PCC and PDC Matrices<a class="anchor" aria-label="anchor" href="#clustering-using-fuzzy-k-means-fuzzy-clustering-using-info-from-pcc-and-pdc-matrices"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dynr.sub.html">dynr.sub</a></span><span class="op">(</span></span>
 <span>  input <span class="op">=</span> <span class="va">demo.dynr.var</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"fuzz"</span>,</span>
 <span>  params.var <span class="op">=</span> <span class="st">"Both"</span>,</span>
 <span>  k <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  m <span class="op">=</span> <span class="fl">2</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Fuzzy clustering object of class 'fclust' </span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Number of objects: </span></span>
-<span><span class="co">#&gt;  10</span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Number of clusters: </span></span>
-<span><span class="co">#&gt;  2</span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Clustering index values: </span></span>
-<span><span class="co">#&gt; SIL.F k=2 </span></span>
-<span><span class="co">#&gt; 0.3447426 </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Closest hard clustering partition: </span></span>
-<span><span class="co">#&gt;  Obj 1  Obj 2  Obj 3  Obj 4  Obj 5  Obj 6  Obj 7  Obj 8  Obj 9 Obj 10 </span></span>
-<span><span class="co">#&gt;      1      2      1      1      1      2      1      1      2      2 </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Membership degree matrix (rounded): </span></span>
-<span><span class="co">#&gt;        Clus 1 Clus 2</span></span>
-<span><span class="co">#&gt; Obj 1    0.51   0.49</span></span>
-<span><span class="co">#&gt; Obj 2    0.44   0.56</span></span>
-<span><span class="co">#&gt; Obj 3    0.52   0.48</span></span>
-<span><span class="co">#&gt; Obj 4    0.52   0.48</span></span>
-<span><span class="co">#&gt; Obj 5    0.64   0.36</span></span>
-<span><span class="co">#&gt; Obj 6    0.45   0.55</span></span>
-<span><span class="co">#&gt; Obj 7    0.65   0.35</span></span>
-<span><span class="co">#&gt; Obj 8    0.64   0.36</span></span>
-<span><span class="co">#&gt; Obj 9    0.41   0.59</span></span>
-<span><span class="co">#&gt; Obj 10   0.46   0.54</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Available components: </span></span>
-<span><span class="co">#&gt;  [1] "U"         "H"         "F"         "clus"      "medoid"    "value"    </span></span>
-<span><span class="co">#&gt;  [7] "criterion" "iter"      "k"         "m"         "ent"       "b"        </span></span>
-<span><span class="co">#&gt; [13] "vp"        "delta"     "stand"     "Xca"       "X"         "D"        </span></span>
-<span><span class="co">#&gt; [19] "call"     </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; </span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">##  Fuzzy clustering object of class 'fclust' </span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Number of objects: </span></span>
+<span><span class="co">##  10</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Number of clusters: </span></span>
+<span><span class="co">##  2</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Clustering index values: </span></span>
+<span><span class="co">## SIL.F k=2 </span></span>
+<span><span class="co">## 0.3447426 </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Closest hard clustering partition: </span></span>
+<span><span class="co">##  Obj 1  Obj 2  Obj 3  Obj 4  Obj 5  Obj 6  Obj 7  Obj 8  Obj 9 Obj 10 </span></span>
+<span><span class="co">##      1      2      1      1      1      2      1      1      2      2 </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Membership degree matrix (rounded): </span></span>
+<span><span class="co">##        Clus 1 Clus 2</span></span>
+<span><span class="co">## Obj 1    0.51   0.49</span></span>
+<span><span class="co">## Obj 2    0.44   0.56</span></span>
+<span><span class="co">## Obj 3    0.52   0.48</span></span>
+<span><span class="co">## Obj 4    0.52   0.48</span></span>
+<span><span class="co">## Obj 5    0.64   0.36</span></span>
+<span><span class="co">## Obj 6    0.45   0.55</span></span>
+<span><span class="co">## Obj 7    0.65   0.35</span></span>
+<span><span class="co">## Obj 8    0.64   0.36</span></span>
+<span><span class="co">## Obj 9    0.41   0.59</span></span>
+<span><span class="co">## Obj 10   0.46   0.54</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Available components: </span></span>
+<span><span class="co">##  [1] "U"         "H"         "F"         "clus"      "medoid"    "value"    </span></span>
+<span><span class="co">##  [7] "criterion" "iter"      "k"         "m"         "ent"       "b"        </span></span>
+<span><span class="co">## [13] "vp"        "delta"     "stand"     "Xca"       "X"         "D"        </span></span>
+<span><span class="co">## [19] "call"     </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## </span></span></code></pre>
 </div>
 </div>
 <div class="section level2">
 <h2 id="list-of-dynr-cook-outputs">List of dynr.cook() outputs<a class="anchor" aria-label="anchor" href="#list-of-dynr-cook-outputs"></a>
 </h2>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">res.list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">demo.dynr.var</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">res.list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">demo.dynr.var</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">Res</span></span>
 <span><span class="op">}</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dynr.sub.html">dynr.sub</a></span><span class="op">(</span></span>
 <span>  input <span class="op">=</span> <span class="va">res.list</span>,</span>
 <span>  params.cook <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a_5"</span>, <span class="st">"c_4"</span>, <span class="st">"d_5"</span>, <span class="st">"e_4"</span><span class="op">)</span>,</span>
 <span>  method <span class="op">=</span> <span class="st">"fuzz"</span>,</span>
 <span>  k <span class="op">=</span> <span class="fl">2</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Fuzzy clustering object of class 'fclust' </span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Number of objects: </span></span>
-<span><span class="co">#&gt;  10</span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Number of clusters: </span></span>
-<span><span class="co">#&gt;  2</span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Clustering index values: </span></span>
-<span><span class="co">#&gt; SIL.F k=2 </span></span>
-<span><span class="co">#&gt; 0.2619831 </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  </span></span>
-<span><span class="co">#&gt;  Closest hard clustering partition: </span></span>
-<span><span class="co">#&gt;  Obj 1  Obj 2  Obj 3  Obj 4  Obj 5  Obj 6  Obj 7  Obj 8  Obj 9 Obj 10 </span></span>
-<span><span class="co">#&gt;      1      1      1      1      2      2      2      2      1      1 </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Membership degree matrix (rounded): </span></span>
-<span><span class="co">#&gt;        Clus 1 Clus 2</span></span>
-<span><span class="co">#&gt; Obj 1    0.57   0.43</span></span>
-<span><span class="co">#&gt; Obj 2    0.57   0.43</span></span>
-<span><span class="co">#&gt; Obj 3    0.57   0.43</span></span>
-<span><span class="co">#&gt; Obj 4    0.57   0.43</span></span>
-<span><span class="co">#&gt; Obj 5    0.39   0.61</span></span>
-<span><span class="co">#&gt; Obj 6    0.43   0.57</span></span>
-<span><span class="co">#&gt; Obj 7    0.38   0.62</span></span>
-<span><span class="co">#&gt; Obj 8    0.39   0.61</span></span>
-<span><span class="co">#&gt; Obj 9    0.52   0.48</span></span>
-<span><span class="co">#&gt; Obj 10   0.52   0.48</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  Available components: </span></span>
-<span><span class="co">#&gt;  [1] "U"         "H"         "F"         "clus"      "medoid"    "value"    </span></span>
-<span><span class="co">#&gt;  [7] "criterion" "iter"      "k"         "m"         "ent"       "b"        </span></span>
-<span><span class="co">#&gt; [13] "vp"        "delta"     "stand"     "Xca"       "X"         "D"        </span></span>
-<span><span class="co">#&gt; [19] "call"     </span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; </span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">##  Fuzzy clustering object of class 'fclust' </span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Number of objects: </span></span>
+<span><span class="co">##  10</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Number of clusters: </span></span>
+<span><span class="co">##  2</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Clustering index values: </span></span>
+<span><span class="co">## SIL.F k=2 </span></span>
+<span><span class="co">## 0.2619831 </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Closest hard clustering partition: </span></span>
+<span><span class="co">##  Obj 1  Obj 2  Obj 3  Obj 4  Obj 5  Obj 6  Obj 7  Obj 8  Obj 9 Obj 10 </span></span>
+<span><span class="co">##      1      1      1      1      2      2      2      2      1      1 </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Membership degree matrix (rounded): </span></span>
+<span><span class="co">##        Clus 1 Clus 2</span></span>
+<span><span class="co">## Obj 1    0.57   0.43</span></span>
+<span><span class="co">## Obj 2    0.57   0.43</span></span>
+<span><span class="co">## Obj 3    0.57   0.43</span></span>
+<span><span class="co">## Obj 4    0.57   0.43</span></span>
+<span><span class="co">## Obj 5    0.39   0.61</span></span>
+<span><span class="co">## Obj 6    0.43   0.57</span></span>
+<span><span class="co">## Obj 7    0.38   0.62</span></span>
+<span><span class="co">## Obj 8    0.39   0.61</span></span>
+<span><span class="co">## Obj 9    0.52   0.48</span></span>
+<span><span class="co">## Obj 10   0.52   0.48</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Available components: </span></span>
+<span><span class="co">##  [1] "U"         "H"         "F"         "clus"      "medoid"    "value"    </span></span>
+<span><span class="co">##  [7] "criterion" "iter"      "k"         "m"         "ent"       "b"        </span></span>
+<span><span class="co">## [13] "vp"        "delta"     "stand"     "Xca"       "X"         "D"        </span></span>
+<span><span class="co">## [19] "call"     </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## </span></span></code></pre>
 </div>
   </div>
 
