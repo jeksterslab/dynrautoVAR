@@ -9,15 +9,6 @@ vignette: >
 ---
 
 ```{r}
-#| include = FALSE
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/vignettes-"
-)
-```
-
-```{r}
 library(dynr)
 library(dynrautoVAR)
 data("demo.dynr.var", package = "dynrautoVAR")
