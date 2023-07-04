@@ -17,6 +17,28 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+library(dynr)
+library(dynrautoVAR)
+data("demo.dynr.var", package = "dynrautoVAR")
+```
+
+## Plotting Output of 2 subjects from each subgroup
+
+```{r}
+par(mfrow = c(2, 2))
+for (pyj in c(3:6)) { # 3 and 4 are Subgroup 1; 5 and 6 are Subgroup 2
+  qgraph::qgraphMixed(
+    demo.dynr.var[[pyj]]$PCC,
+    demo.dynr.var[[pyj]]$PDC,
+    layout = "circle",
+    theme = "gimme",
+    ltyUndirected = 1,
+    ltyDirected = 2
+  )
+}
+```
+
 ## Output of dynr.var()
 
 ### Clustering using WalkTrap (Hard Clustering) using info from PCC and PDC Matrices

@@ -24,5 +24,6 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    rprojroot
+    rprojroot,
+    qgraph
 RoxygenNote: 7.2.3
