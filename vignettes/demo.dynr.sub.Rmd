@@ -19,15 +19,13 @@ data("demo.dynr.var", package = "dynrautoVAR")
 ```{r}
 par(mfrow = c(2, 2))
 for (pyj in c(3:6)) { # 3 and 4 are Subgroup 1; 5 and 6 are Subgroup 2
-  print(
-    qgraph::qgraphMixed(
-      demo.dynr.var[[pyj]]$PCC,
-      demo.dynr.var[[pyj]]$PDC,
-      layout = "circle",
-      theme = "gimme",
-      ltyUndirected = 1,
-      ltyDirected = 2
-    )
+  qgraph::qgraphMixed(
+    demo.dynr.var[[pyj]]$PCC,
+    demo.dynr.var[[pyj]]$PDC,
+    layout = "circle",
+    theme = "gimme",
+    ltyUndirected = 1,
+    ltyDirected = 2
   )
 }
 ```
